@@ -14,7 +14,7 @@
              style sheets/scripts, in the order they appear in the content.
          -->
         <drop theme="/html/head/meta" />
-        <drop theme="/html/head/title" />
+        <!-- drop theme="/html/head/title" / -->
         <drop theme="/html/head/base" />
         <drop theme="/html/head/style" />
         <drop theme="/html/head/script" />
@@ -22,11 +22,11 @@
         <drop theme="/html/head/comment()" />
         
         <after content="/html/head/meta" theme-children="/html/head" />
-        <after content="/html/head/title" theme-children="/html/head" />
+        <replace content="/html/head/title" theme="/html/head/title" />
         
         <after
-            content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
             theme-children="/html/head"
+            content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
             />
 
         <!-- Copy over the id/class attributes on the body tag. This is important
