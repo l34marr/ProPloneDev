@@ -30,7 +30,7 @@
         <dl>
             <tal:block repeat="cinema view/cinemas">
                 <dt>
-                    <a tal:attributes="href cinema/url" tal:content="python:str(cinema.name)" />
+                    <a tal:attributes="href cinema/url" tal:content="cinema/name" />
                 </dt>
                 <dd tal:content="cinema/address" />
             </tal:block>
