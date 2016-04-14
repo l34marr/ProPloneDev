@@ -1,13 +1,11 @@
 from setuptools import setup, find_packages
-import os
 
 version = '2.0'
 
-setup(name='optilux.policy',
+setup(name='optilux.codeexamples',
       version=version,
-      description="Policy package for the Optilux Cinemas project",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      description="Zope code examples",
+      long_description=open("README.txt").read() + "\n",
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -19,27 +17,16 @@ setup(name='optilux.policy',
       author_email='optilude@gmail.com',
       url='http://optilux-cinemas.com',
       license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
+      packages=find_packages('src'),
+      package_dir={'': 'src'},
       namespace_packages=['optilux'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
           'setuptools',
           'Plone',
-          'Products.PloneFormGen',
-          'optilux.theme',
-          'optilux.cinemacontent',
       ],
       extras_require={
           'test': ['plone.app.testing',]
       },
-      entry_points="""
-      # -*- Entry points: -*-
-
-      [z3c.autoinclude.plugin]
-      target = plone
-      """,
-# uncomment these to re-enable support for Paster local commands
-#     setup_requires=["PasteScript"],
-#     paster_plugins=["ZopeSkel"],
       )
